@@ -1,4 +1,4 @@
-package com.example.new_compose.modules.auth.login.data
+package com.example.new_compose.modules.auth.data
 
 /*
 class AuthRepo @Inject constructor(

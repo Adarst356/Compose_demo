@@ -76,5 +76,11 @@ val surfaceContainerDark = Color(0xFF1D2024)
 val surfaceContainerHighDark = Color(0xFF282A2F)
 val surfaceContainerHighestDark = Color(0xFF333539)
 
-
-
+// Luxury Colors
+val ObsidianTop = Color(0xFF141416)
+val ObsidianBottom = Color(0xFF0C0C0D)
+val LuxuryBorderColor = Color(0x0AFFFFFF)
+val LuxuryInactiveIcon = Color(0xFF8E8E93)
+val LuxuryActiveIcon = Color(0xFF0C0C0D)
+val GoldTop = Color(0xFFD4AF37)
+val GoldBottom = Color(0xFFAA8226)

@@ -1,18 +1,21 @@
 package com.example.new_compose.modules.dashboard
 
-import androidx.annotation.DrawableRes
-import com.example.new_compose.R
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.outlined.History
+import androidx.compose.material.icons.outlined.Home
+import androidx.compose.material.icons.outlined.Person
+import androidx.compose.ui.graphics.vector.ImageVector
 
 sealed class Destinations(
     val route: String,
     val label: String,
-    @DrawableRes val icon: Int? = null
+    val icon: ImageVector? = null
 ) {
     data object Login : Destinations("login", "Login")
     data object SignUp : Destinations("signup", "Sign Up")
 
     data object Dashboard : Destinations("dashboard", "Dashboard")
-    data object Home : Destinations("home", "Home", R.drawable.ic_home)
-    data object History : Destinations("history", "History", R.drawable.ic_history)
-    data object Profile : Destinations("profile", "Profile", R.drawable.ic_profile)
+    data object Home : Destinations("home", "Home", Icons.Outlined.Home)
+    data object History : Destinations("history", "History", Icons.Outlined.History)
+    data object Profile : Destinations("profile", "Profile", Icons.Outlined.Person)
 }

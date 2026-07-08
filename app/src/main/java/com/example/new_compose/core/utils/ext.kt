@@ -35,7 +35,6 @@ import androidx.compose.ui.unit.dp
 import androidx.core.content.FileProvider
 import androidx.core.net.toUri
 import com.example.new_compose.core.common.AppViewModel
-import com.example.new_compose.core.utils.Constants.ONE_MB
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import org.json.JSONObject
@@ -174,18 +173,7 @@ fun String.launchUrl(context: Context) {
     }
 
 }
-fun Uri.launchUri(context: Context,type:String?=null) {
-    runCatching {
-        val intent = Intent(Intent.ACTION_VIEW, this).apply {
-            if(type.isNullOrBlank().not())
-            setDataAndType(this@launchUri, type)
-            addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
-            addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
-        }
-        context.startActivity(intent)
-    }
 
-}
 
 
 fun Uri.getFileFromUri(context: Context): File? {
@@ -253,17 +241,7 @@ fun String.openMail(context: Context) {
     }
 }
 
-fun ByteArray.compress():ByteArray {
-   return if (size > ONE_MB) {
-        // Decode and compress only if > 1MB
-        val bitmap = BitmapFactory.decodeByteArray(this, 0, size)
-        val outputStream = ByteArrayOutputStream()
-        bitmap.compress(Bitmap.CompressFormat.JPEG, 90, outputStream)
-        outputStream.toByteArray()
-    } else {
-        this
-    }
-}
+
 
 fun Context.gotoApplicationSettings() {
     startActivity(Intent().apply {

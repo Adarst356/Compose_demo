@@ -37,7 +37,8 @@ fun HistoryScreen(mainNavController: NavHostController) {
             modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.spacedBy(12.dp)
         ) {
-            listOf("All", "Income", "Expense").forEach { filter ->
+            listOf("All", "Income", "Expense").forEach {
+                filter ->
                 FilterChip(
                     label = filter,
                     isSelected = selectedFilter == filter,

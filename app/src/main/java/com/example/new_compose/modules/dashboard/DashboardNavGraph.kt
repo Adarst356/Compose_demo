@@ -23,8 +23,7 @@ import com.example.new_compose.modules.dashboard.profile.ProfileScreen
 fun DashboardNavGraph(mainNavController: NavHostController) {
 
     val bottomNavController = rememberNavController()
-    val selectedRoute = bottomNavController.currentBackStackEntryAsState()
-        .value?.destination?.route
+    val selectedRoute = bottomNavController.currentBackStackEntryAsState().value?.destination?.route
 
     val bottomItems = listOf(
         Destinations.Home,

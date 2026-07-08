@@ -47,8 +47,6 @@ fun MainNavGraph(
             )
         }
 
-        composable(Destinations.Dashboard.route) {
-            DashboardNavGraph(mainNavController)
-        }
+        composable(Destinations.Dashboard.route) { DashboardNavGraph(mainNavController) }
     }
 }

@@ -29,9 +29,9 @@ object NetworkModule {
 
         return OkHttpClient.Builder()
             .addInterceptor(prettyPrinterInterceptor)
-            .readTimeout(2, TimeUnit.MINUTES)
-            .writeTimeout(2, TimeUnit.MINUTES)
-            .connectTimeout(5, TimeUnit.MINUTES)
+            .readTimeout(30, TimeUnit.SECONDS)
+            .writeTimeout(30, TimeUnit.SECONDS)
+            .connectTimeout(30, TimeUnit.SECONDS)
             .build()
     }
 

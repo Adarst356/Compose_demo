@@ -47,3 +47,10 @@ data class CommonRes(
         val statuscode: Int? = null
     )
 
+data class ApiResponse<T>(
+    val success: Boolean,
+    val message: String,
+    val statusCode: Int,
+    val data: T?
+)
+

@@ -1,6 +1,7 @@
 package com.example.new_compose.modules.dashboard
 
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.outlined.AddCard
 import androidx.compose.material.icons.outlined.History
 import androidx.compose.material.icons.outlined.Home
 import androidx.compose.material.icons.outlined.Person
@@ -18,4 +19,5 @@ sealed class Destinations(
     data object Home : Destinations("home", "Home", Icons.Outlined.Home)
     data object History : Destinations("history", "History", Icons.Outlined.History)
     data object Profile : Destinations("profile", "Profile", Icons.Outlined.Person)
+    data object Emi : Destinations("emi", "Emi", Icons.Outlined.AddCard)
 }

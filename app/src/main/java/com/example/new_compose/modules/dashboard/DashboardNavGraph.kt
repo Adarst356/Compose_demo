@@ -14,6 +14,7 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.example.new_compose.core.composables.LuxuryBottomNav
+import com.example.new_compose.modules.dashboard.emi.EmiScreen
 import com.example.new_compose.modules.dashboard.history.HistoryScreen
 import com.example.new_compose.modules.dashboard.home.HomeScreen
 import com.example.new_compose.modules.dashboard.profile.ProfileScreen
@@ -28,13 +29,15 @@ fun DashboardNavGraph(mainNavController: NavHostController) {
     val bottomItems = listOf(
         Destinations.Home,
         Destinations.History,
-        Destinations.Profile
+        Destinations.Profile,
+        Destinations.Emi
     )
 
     val currentTitle = when (selectedRoute) {
         Destinations.Home.route -> "Home"
         Destinations.History.route -> "History"
         Destinations.Profile.route -> "Profile"
+        Destinations.Emi.route -> "EMI"
         else -> "Dashboard"
     }
 
@@ -72,6 +75,7 @@ fun DashboardNavGraph(mainNavController: NavHostController) {
             composable(Destinations.Home.route) { HomeScreen(mainNavController) }
             composable(Destinations.History.route) { HistoryScreen(mainNavController) }
             composable(Destinations.Profile.route) { ProfileScreen(mainNavController) }
+            composable(Destinations.Emi.route) { EmiScreen(mainNavController) }
         }
     }
 }

@@ -15,7 +15,7 @@ class SessionManager @Inject constructor(
 ) {
 
 
-    private val prefs =
+    private val         prefs =
         context.getSharedPreferences(
             "user_session",
             Context.MODE_PRIVATE

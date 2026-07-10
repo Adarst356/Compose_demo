@@ -103,9 +103,7 @@ fun ProductScreen(
             }
 
             is UiState.Success -> {
-
                 val products = state.data.products.orEmpty()
-
                 LazyVerticalGrid(
                     columns = GridCells.Adaptive(minSize = 168.dp),
                     modifier = Modifier

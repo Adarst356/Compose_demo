@@ -5,6 +5,7 @@ import androidx.compose.material.icons.outlined.AddCard
 import androidx.compose.material.icons.outlined.History
 import androidx.compose.material.icons.outlined.Home
 import androidx.compose.material.icons.outlined.Person
+import androidx.compose.material.icons.outlined.ShoppingBag
 import androidx.compose.ui.graphics.vector.ImageVector
 
 sealed class Destinations(
@@ -20,4 +21,5 @@ sealed class Destinations(
     data object History : Destinations("history", "History", Icons.Outlined.History)
     data object Profile : Destinations("profile", "Profile", Icons.Outlined.Person)
     data object Emi : Destinations("emi", "Emi", Icons.Outlined.AddCard)
+    data object Product : Destinations("product", "Product", Icons.Outlined.ShoppingBag)
 }

@@ -1,5 +1,4 @@
 package com.example.new_compose.modules.dashboard.emi
-
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
@@ -27,14 +26,12 @@ import coil.compose.AsyncImage
 import com.example.new_compose.core.composables.ErrorTextView
 import com.example.new_compose.core.composables.Loader
 import com.example.new_compose.core.network.UiState
-import com.example.new_compose.modules.dashboard.emi.data.model.EmiResponse
 
 @Composable
 fun EmiScreen(
     mainNavController: NavHostController = rememberNavController(),
     viewModel: EmiViewModel = hiltViewModel()
 ) {
-
     val emiState by viewModel.emiState.collectAsState()
     val searchQuery by viewModel.searchQuery.collectAsState()
 

@@ -20,6 +20,7 @@ okhttp = "5.4.0"
 retrofit = "3.1.0-SNAPSHOT"
 retrofitVersion = "2.11.0"
 shaketraceCompose = "1.0.7"
+foundation = "1.11.4"
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -48,6 +49,7 @@ okhttp = { module = "com.squareup.okhttp3:okhttp", version.ref = "okhttp" }
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
 retrofit-v2110 = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofitVersion" }
 shaketrace-compose = { module = "com.github.therockakash:ShakeTrace-Compose", version.ref = "shaketraceCompose" }
+androidx-compose-foundation = { group = "androidx.compose.foundation", name = "foundation", version.ref = "foundation" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

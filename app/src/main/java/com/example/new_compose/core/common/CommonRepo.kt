@@ -24,7 +24,6 @@ data class CommonRes(
     val pGModelForApp: PGModelForApp? = null,
     val newsContent: News? = null,
     val pGs: List<PgData>? = null,*/
-
     val isOTPRequired: Boolean? = null,
     val is2FactorRequired: Boolean? = null,
     val referenceID: Int? = null,

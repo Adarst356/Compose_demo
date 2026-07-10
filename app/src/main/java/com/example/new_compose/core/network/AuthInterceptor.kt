@@ -26,13 +26,11 @@ class AuthInterceptor @Inject constructor(
             "Accept",
             "application/json"
         )
-        sessionManager.userData?.let { user ->
-            user.accessToken?.let {
-                builder.addHeader(
-                    "Authorization",
-                    "Bearer $it"
-                )
-            }
+        sessionManager.userData?.accessToken?.let { token ->
+            builder.addHeader(
+                "Authorization",
+                "Bearer $token"
+            )
 
         }
 

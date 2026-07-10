@@ -21,33 +21,40 @@ object NetworkModule {
         return PrettyPrinterInterceptor()
     }
 
+
     @Provides
     @Singleton
     fun provideOkHttpClient(
+        authInterceptor: AuthInterceptor,
         prettyPrinterInterceptor: PrettyPrinterInterceptor
     ): OkHttpClient {
 
         return OkHttpClient.Builder()
+            /// Token Header yaha add hoga
+            .addInterceptor(authInterceptor)
+            /// Logging
             .addInterceptor(prettyPrinterInterceptor)
             .readTimeout(30, TimeUnit.SECONDS)
             .writeTimeout(30, TimeUnit.SECONDS)
             .connectTimeout(30, TimeUnit.SECONDS)
+
             .build()
     }
+
 
     @Provides
     @Singleton
     fun provideRetrofit(
         okHttpClient: OkHttpClient
     ): Retrofit {
-
         return Retrofit.Builder()
             .baseUrl(BASE_URL)
             .client(okHttpClient)
-            .addConverterFactory(GsonConverterFactory.create())
+            .addConverterFactory(
+                GsonConverterFactory.create()
+            )
             .build()
     }
-
     @Provides
     @Singleton
     fun provideApiClient(retrofit: Retrofit): ApiClient {

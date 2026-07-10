@@ -1,15 +1,7 @@
 package com.example.new_compose.modules.dashboard.data
 
-import android.Manifest
-import androidx.annotation.RequiresPermission
-import com.example.new_compose.core.common.CommonRes
 import com.example.new_compose.core.network.ApiClient
-import com.example.new_compose.core.network.UiState
-import com.example.new_compose.core.utils.NetworkManager
-import com.example.new_compose.core.utils.getError
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.withContext
-import retrofit2.Response
+import com.example.new_compose.core.managers.NetworkManager
 import javax.inject.Inject
 
 

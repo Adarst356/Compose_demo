@@ -1,7 +1,7 @@
 package com.example.new_compose.modules.auth.data
 
 import com.example.new_compose.core.network.ApiClient
-import com.example.new_compose.core.utils.NetworkManager
+import com.example.new_compose.core.managers.NetworkManager
 import javax.inject.Inject
 
 class AuthRepo @Inject constructor(

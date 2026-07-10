@@ -1,4 +1,4 @@
-package com.example.new_compose.core.common
+package com.example.new_compose.core.common.data
 
 data class CommonRes(
     val msg: String? = null,

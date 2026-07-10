@@ -1,9 +1,8 @@
 package com.example.new_compose.modules.dashboard.product.data.repo
 import  com.example.new_compose.core.network.ApiClient
 import com.example.new_compose.core.network.UiState
-import com.example.new_compose.core.utils.NetworkManager
+import com.example.new_compose.core.managers.NetworkManager
 import com.example.new_compose.core.utils.getError
-import com.example.new_compose.modules.dashboard.emi.data.model.EmiResponse
 import com.example.new_compose.modules.dashboard.product.data.model.ProductResponse
 import javax.inject.Inject
 

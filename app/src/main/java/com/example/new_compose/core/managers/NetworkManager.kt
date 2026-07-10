@@ -1,4 +1,4 @@
-package com.example.new_compose.core.utils
+package com.example.new_compose.core.managers
 
 import android.Manifest
 import android.content.Context

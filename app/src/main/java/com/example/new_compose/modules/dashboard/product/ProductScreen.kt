@@ -11,6 +11,9 @@ import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.GridItemSpan
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
+import androidx.compose.foundation.lazy.staggeredgrid.LazyVerticalStaggeredGrid
+import androidx.compose.foundation.lazy.staggeredgrid.StaggeredGridCells
+import androidx.compose.foundation.lazy.staggeredgrid.items
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.icons.Icons
@@ -92,30 +95,26 @@ fun ProductScreen(
 
         when (val state = productState) {
 
-            UiState.None -> {}
+          is  UiState.None -> {}
 
-            UiState.Loading -> {
+           is UiState.Loading -> {
                 Loader()
             }
-
             is UiState.Error -> {
                 ErrorTextView(error = state.message)
             }
-
             is UiState.Success -> {
                 val products = state.data.products.orEmpty()
-                LazyVerticalGrid(
-                    columns = GridCells.Adaptive(minSize = 168.dp),
+                LazyVerticalStaggeredGrid(
+                    columns = StaggeredGridCells.Adaptive(168.dp),
                     modifier = Modifier
                         .fillMaxSize()
-                        .padding(padding), // Scaffold padding
+                        .padding(padding),
                     contentPadding = PaddingValues(16.dp),
                     horizontalArrangement = Arrangement.spacedBy(12.dp),
-                    verticalArrangement = Arrangement.spacedBy(12.dp)
+                    verticalItemSpacing = 12.dp
                 ) {
-
                     items(products.filterNotNull()) { product ->
-
                         ProductCard(
                             thumbnail = product.thumbnail,
                             title = product.title.orEmpty(),
@@ -125,7 +124,6 @@ fun ProductScreen(
 
                             }
                         )
-
                     }
                 }
             }
@@ -153,9 +151,7 @@ fun ProductCard(
             containerColor = Color.White
         )
     ) {
-
         Column {
-
             AsyncImage(
                 model = thumbnail,
                 contentDescription = title,
@@ -168,7 +164,6 @@ fun ProductCard(
             Column(
                 modifier = Modifier.padding(12.dp)
             ) {
-
                 Text(
                     text = title,
                     fontSize = 16.sp,
@@ -182,14 +177,12 @@ fun ProductCard(
                 Row(
                     verticalAlignment = Alignment.CenterVertically
                 ) {
-
                     Text(
                         text = "$$price",
                         fontSize = 18.sp,
                         fontWeight = FontWeight.Bold,
                         color = Color(0xFF2E7D32)
                     )
-
                     Spacer(modifier = Modifier.weight(1f))
 
                     Icon(

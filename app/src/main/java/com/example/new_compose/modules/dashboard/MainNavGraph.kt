@@ -19,34 +19,17 @@ fun MainNavGraph(
         startDestination = Destinations.Login.route,
         modifier = modifier
     ) {
+
         composable(Destinations.Login.route) {
-            LoginScreen(
-                onSignUpClick = {
-                    mainNavController.navigate(Destinations.SignUp.route)
-                },
-                onLoginSuccess = {
-                    mainNavController.navigate(Destinations.Dashboard.route) {
-                        popUpTo(Destinations.Login.route) { inclusive = true }
-                        launchSingleTop = true
-                    }
-                }
-            )
+            LoginScreen(mainNavController)
         }
 
         composable(Destinations.SignUp.route) {
-            SignUpScreen(
-                onSignUpClick = {
-                    mainNavController.navigate(Destinations.Dashboard.route) {
-                        popUpTo(Destinations.Login.route) { inclusive = true }
-                        launchSingleTop = true
-                    }
-                },
-                onLoginClick = {
-                    mainNavController.popBackStack()
-                }
-            )
+            SignUpScreen(mainNavController)
         }
 
-        composable(Destinations.Dashboard.route) { DashboardNavGraph(mainNavController) }
+        composable(Destinations.Dashboard.route) {
+            DashboardNavGraph(mainNavController)
+        }
     }
 }

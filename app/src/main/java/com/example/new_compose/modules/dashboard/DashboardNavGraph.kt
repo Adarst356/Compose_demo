@@ -16,6 +16,8 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 
 import com.example.new_compose.core.composables.LuxuryBottomNav
+import com.example.new_compose.modules.auth.login.LoginScreen
+import com.example.new_compose.modules.auth.signup.SignUpScreen
 import com.example.new_compose.modules.dashboard.emi.EmiScreen
 import com.example.new_compose.modules.dashboard.history.HistoryScreen
 import com.example.new_compose.modules.dashboard.home.HomeScreen
@@ -49,6 +51,8 @@ fun DashboardNavGraph(mainNavController: NavHostController) {
             startDestination = Destinations.Home.route,
             modifier = Modifier.weight(1f)
         ) {
+            composable(Destinations.Login.route) { LoginScreen(mainNavController) }
+            composable(Destinations.SignUp.route) { SignUpScreen(mainNavController) }
             composable(Destinations.Home.route) { HomeScreen(mainNavController) }
             composable(Destinations.History.route) { HistoryScreen(mainNavController) }
             composable(Destinations.Product.route) { ProductScreen(mainNavController) }
@@ -66,6 +70,7 @@ fun DashboardNavGraph(mainNavController: NavHostController) {
                         }
                     }
                     launchSingleTop = true
+                    3
                     restoreState = true
                 }
             }

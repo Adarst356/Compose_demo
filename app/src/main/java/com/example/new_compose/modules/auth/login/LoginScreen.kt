@@ -15,11 +15,15 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.unit.dp
+import androidx.hilt.navigation.compose.hiltViewModel
+import androidx.navigation.NavHostController
+import com.example.new_compose.modules.dashboard.Destinations
 
 @Composable
 fun LoginScreen(
-    onSignUpClick: () -> Unit,
-    onLoginSuccess: () -> Unit
+    mainNavController: NavHostController,
+
+    viewModel: LoginViewModel = hiltViewModel()
 ) {
 
     var email by remember { mutableStateOf("") }
@@ -105,7 +109,12 @@ fun LoginScreen(
 
         Button(
             onClick = {
-                onLoginSuccess()
+                mainNavController.navigate(Destinations.Dashboard.route) {
+                    popUpTo(Destinations.Login.route) {
+                        inclusive = true
+                    }
+                    launchSingleTop = true
+                }
             },
             modifier = Modifier
                 .fillMaxWidth()
@@ -125,7 +134,9 @@ fun LoginScreen(
             Spacer(modifier = Modifier.width(4.dp))
 
             TextButton(
-                onClick = onSignUpClick
+                onClick = {
+                    mainNavController.navigate(Destinations.SignUp.route)
+                }
             ) {
                 Text("Sign Up")
             }

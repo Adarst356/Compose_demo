@@ -44,28 +44,6 @@ import com.example.new_compose.core.network.UiState
 import com.example.new_compose.modules.dashboard.emi.EmiViewModel
 import kotlin.math.roundToInt
 
-object StockroomColors {
-    val bg = Color(0xFF12151A)
-    val surface = Color(0xFF1B2028)
-    val line = Color(0xFF333B47)
-    val card = Color(0xFFF4F1E9)
-    val cardLine = Color(0xFFD9D3C2)
-    val ink = Color(0xFF1A1A17)
-    val inkSoft = Color(0xFF5B584E)
-    val stamp = Color(0xFFC0392B)
-    val stampInk = Color(0xFFF4E4E2)
-    val gold = Color(0xFFB08245)
-    val textHi = Color(0xFFF2F0E9)
-    val textMid = Color(0xFF9CA3AF)
-
-    fun categoryColor(category: String): Color = when (category) {
-        "beauty" -> Color(0xFFC0567A)
-        "fragrances" -> Color(0xFF7F6BC4)
-        "furniture" -> Color(0xFFB08245)
-        "groceries" -> Color(0xFF5C8C56)
-        else -> Color(0xFF888880)
-    }
-}
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -86,7 +64,7 @@ fun ProductScreen(
                     )
                 },
                 colors = TopAppBarDefaults.topAppBarColors(
-                    containerColor = StockroomColors.bg,
+                    containerColor = Color(0xFF12151A),
                     titleContentColor = Color.White
                 )
             )
